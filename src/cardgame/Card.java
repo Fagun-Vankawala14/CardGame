@@ -10,15 +10,14 @@ package cardgame;
  * @author fagun
  */
 public class Card {
-     public enum Suit
+   public enum Suit
    {
-       HEARTS, CLUBS,SPADES, DIAMONDS
+       HEARTS, CLUBS, SPADES, DIAMONDS
    }
    
    public enum Value
    {
-       ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING,
-		JACL
+       ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING,JACL
    }
     private Value value;
     private Suit suit;
@@ -27,6 +26,10 @@ public class Card {
     {
         value = v;
         suit = s;
+    }
+    
+    public Card(){
+        
     }
     /**
      * @return the value
@@ -55,6 +58,4 @@ public class Card {
     public void setSuit(Suit suit) {
         this.suit = suit;
     }
-    
-
 }
