@@ -8,6 +8,8 @@ package cardgame;
 /**
  *
  * @author fagun
+ * Name:Freny Vahanka
+ * StudentID:- 991735491
  */
 public class Card {
      public enum Suit
