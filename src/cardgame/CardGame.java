@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  * The CardGame class simulates a hand of seven cards.
- * Author: Arjun Singh Dhillon
+ * Author: ARJUN SINGH DHILLON
  * Student ID: 991729972
  */
 public class CardGame {
