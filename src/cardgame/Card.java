@@ -1,16 +1,8 @@
 package cardgame;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author fagun
- */
 public class Card {
-     public enum Suit
+
+    public enum Suit
    {
        HEARTS, CLUBS,SPADES, DIAMONDS
    }
@@ -55,6 +47,5 @@ public class Card {
     public void setSuit(Suit suit) {
         this.suit = suit;
     }
-    
 
 }
