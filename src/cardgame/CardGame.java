@@ -30,7 +30,7 @@ public class CardGame {
         }
     }
 
-    public void printHand() {
+    public void PrintHand() {
         for (String card : this.hand) {
             System.out.println(card);
         }
@@ -41,6 +41,6 @@ public class CardGame {
      */
     public static void main(String[] args) {
         CardGame game = new CardGame();
-        game.printHand();
+        game.PrintHand();
     }
 }
