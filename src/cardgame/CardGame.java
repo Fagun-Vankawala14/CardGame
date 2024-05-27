@@ -51,39 +51,15 @@ public class CardGame {
                     System.out.println();
 
                     /* - - - - - PART 2 - - - - - */
-                    String newCardValue;
-                    String newCardSuit;
-
-                    /* prompt the user for a card, make sure it is a valid input */
-                    System.out.println("Pick a card, any card: ");
-                    System.out.print("   Select value: ");
-                    newCardValue = scanner.next().toUpperCase();
-                    /* if incorrect card value, produces an error = need a try/catch */
-                    try {
-                              Card.Value cv = Card.Value.valueOf(newCardValue);
-                    } catch (IllegalArgumentException e) {
-                              System.out.print("   Invalid input! Select value from ACE, TWO to TEN, JACK, QUEEN or KING: ");
-                              newCardValue = scanner.next().toUpperCase();
-                    }
-
-                    System.out.print("   Select suit: ");
-                    newCardSuit = scanner.next().toUpperCase();
-                    /* if incorrect card suit, produces an error = need a try/catch */
-                    try {
-                              Card.Suit cs = Card.Suit.valueOf(newCardSuit);
-                    } catch (IllegalArgumentException e) {
-                              System.out.print("   Invalid input! Select suit from HEARTS, CLUBS, SPADES or DIAMONDS: ");
-                              newCardSuit = scanner.next().toUpperCase();
-                    }
-
-                    Card newCard = new Card(Card.Value.valueOf(newCardValue), Card.Suit.valueOf(newCardSuit));
-                    // System.out.print(newCard.getValue() + " " + newCard.getSuit());
+ /* create a lucky card */
+                    Card luckyCard = new Card(Card.Value.JACK, Card.Suit.DIAMONDS);
+                    System.out.println("< Lucky Card has been C H O S E N >");
                     System.out.println();
 
                     /* check if card is in hand */
                     boolean cardInHand = false;
                     for (Card c : cards) {
-                              if (c.getValue() == newCard.getValue() && c.getSuit() == newCard.getSuit()) {
+                              if (c.getValue() == luckyCard.getValue() && c.getSuit() == luckyCard.getSuit()) {
                                         cardInHand = true;
                                         break;
                               } else {
@@ -92,9 +68,9 @@ public class CardGame {
                     }
 
                     if (cardInHand == true) {
-                              System.out.println("User's card found in magic hand!");
+                              System.out.println("Lucky Card is found in magic hand!");
                     } else {
-                              System.out.println("User's card NOT found in magic hand!");
+                              System.out.println("Lucky Card is NOT found in magic hand!");
                     }
 
                     scanner.close();
