@@ -12,8 +12,8 @@ import java.util.Random;
  */
 public class CardGame {
 
-    private String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
-    private String[] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    private String[] suits = {"HEARTS", "DIAMONDS", "CLUBS", "SPADES"};
+    private String[] values = {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
     private String[] hand;
 
     public CardGame() {
