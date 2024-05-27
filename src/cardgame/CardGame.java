@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 /**
  * CardGame class models a hand of seven cards.
- * Saurav Bedi
+ * SAURAV BEDI
  * Student Number: 991452868
  */
 public class CardGame {
