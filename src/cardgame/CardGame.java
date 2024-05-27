@@ -26,7 +26,7 @@ public class CardGame {
         try {
             String suitInput = JOptionPane.showInputDialog("Pick a card suit (HEARTS, CLUBS, SPADES, DIAMONDS):");
             if (suitInput == null) {
-                JOptionPane.showMessageDialog(null, "No suit entered. Exiting program.");
+                JOptionPane.showMessageDialog(null, "No suit entered. Ending program.");
                 return;
             }
             suitInput = suitInput.toUpperCase().trim();
