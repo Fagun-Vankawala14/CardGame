@@ -58,9 +58,9 @@ public class CardGame {
     public static void main(String[] args) {
         CardGame game = new CardGame();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose the value of card (ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING):");
+        System.out.println("Choose the value of card:");
         String valueInput = scanner.next().toUpperCase();
-        System.out.println("Choose the suit of the card (HEARTS, CLUBS, SPADES, DIAMONDS):");
+        System.out.println("Choose the suit of the card:");
         String suitInput = scanner.next().toUpperCase();
         Card.Value value = Card.Value.valueOf(valueInput);
         Card.Suit suit = Card.Suit.valueOf(suitInput);
