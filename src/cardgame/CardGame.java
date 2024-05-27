@@ -9,32 +9,32 @@ import java.util.*;
  * @author fagun
  */
 public class CardGame {
- private static final int NUM_CARDS = 52;
+    private static final int NUM_CARDS = 52;
     private static final int HAND_SIZE = 7;
-    private Card[] hand;
+    private Card[] playerHand;
 
     public CardGame() {
-        this.hand = new Card[HAND_SIZE];
+        this.playerHand = new Card[HAND_SIZE];
         shuffleDeck();
         dealHand();
     }
 
     private void shuffleDeck() {
-        Card[] deck = new Card[NUM_CARDS];
+        Card[] cardDeck = new Card[NUM_CARDS];
         for (int i = 0; i < NUM_CARDS; i++) {
             Card.Suit suit = Card.Suit.values()[i / 13];
             Card.Value value = Card.Value.values()[i % 13];
-            deck[i] = new Card(value, suit);
+            cardDeck[i] = new Card(value, suit);
         }
-        Random rand = new Random();
+        Random randomGenerator = new Random();
         for (int i = NUM_CARDS - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 1);
-            Card temp = deck[i];
-            deck[i] = deck[j];
-            deck[j] = temp;
+            int j = randomGenerator.nextInt(i + 1);
+            Card temp = cardDeck[i];
+            cardDeck[i] = cardDeck[j];
+            cardDeck[j] = temp;
         }
         for (int i = 0; i < HAND_SIZE; i++) {
-            hand[i] = deck[i];
+            playerHand[i] = cardDeck[i];
         }
     }
 
@@ -43,20 +43,21 @@ public class CardGame {
     }
 
     public boolean isCardInHand(Card card) {
-        for (Card c : hand) {
+        for (Card c : playerHand) {
             if (c.getValue() == card.getValue() && c.getSuit() == card.getSuit()) {
                 return true;
             }
         }
         return false;
     }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      CardGame game = new CardGame();
+        CardGame game = new CardGame();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the card (ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, JACL):");
+        System.out.println("Enter the value of the card (ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, JACK):");
         String valueInput = scanner.next().toUpperCase();
         System.out.println("Enter the suit of the card (HEARTS, CLUBS, SPADES, DIAMONDS):");
         String suitInput = scanner.next().toUpperCase();
