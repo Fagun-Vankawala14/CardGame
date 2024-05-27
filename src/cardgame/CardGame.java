@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  *
- * @author fagun
+ * @author Aayush-991730544
  */
 public class CardGame {
 
