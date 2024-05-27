@@ -3,7 +3,9 @@ package cardgame;
 /**
  *
  * @author fagun
+ * @author Patricia Gariando
  */
+// 2024MAY13 - Patricia - Modified
 public class Card {
 
           public enum Suit {
