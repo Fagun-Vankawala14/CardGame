@@ -1,85 +1,50 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package cardgame;
 import java.util.Random;
-import javax.swing.JOptionPane;
-/**
- *
- * @author fagun
- */
-/**
- * CardGame class models a hand of seven cards.
- * ROMY ROMY
- * Student Number: 991725977
- */
+
 public class CardGame {
+    private Card[] hand = new Card[7];
+    private String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
     /**
-     * @param args the command line arguments
+     * CardGame class models a hand of seven cards.
+     * Modifier: [ROMY ROMY], Student ID: [991725977]
+     * Date Modified: [2024-05-29]
      */
-    public static void main(String[] args) {
-        Card[] hand = generateRandomHand();
-        printHand(hand);
-
-        try {
-            String suitInput = JOptionPane.showInputDialog("Pick a card suit (HEARTS, CLUBS, SPADES, DIAMONDS):");
-            if (suitInput == null) {
-                JOptionPane.showMessageDialog(null, "No suit entered. Exiting program.");
-                return;
-            }
-            suitInput = suitInput.toUpperCase().trim();
-
-            String valueInput = JOptionPane.showInputDialog("Pick a card value (ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING):");
-            if (valueInput == null) {
-                JOptionPane.showMessageDialog(null, "No value entered. Exiting program.");
-                return;
-            }
-            valueInput = valueInput.toUpperCase().trim();
-
-            Card.Suit userSuit = Card.Suit.valueOf(suitInput);
-            Card.Value userValue = Card.Value.valueOf(valueInput);
-            Card userCard = new Card(userValue, userSuit);
-
-            boolean cardFound = searchHand(hand, userCard);
-            if (cardFound) {
-                JOptionPane.showMessageDialog(null, "Your card is in the magic hand!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Your card is not in the magic hand.");
-            }
-        } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(null, "Invalid suit or value. Please run the program again and enter valid card details.");
-        }
-    }
-
-    private static Card[] generateRandomHand() {
-        Card[] hand = new Card[7];
-        Random random = new Random();
-
+    public CardGame() {
+        Random rand = new Random();
         for (int i = 0; i < hand.length; i++) {
-            Card.Suit suit = Card.Suit.values()[random.nextInt(Card.Suit.values().length)];
-            Card.Value value = Card.Value.values()[random.nextInt(Card.Value.values().length)];
-            hand[i] = new Card(value, suit);
-        }
-
-        return hand;
-    }
-
-    private static void printHand(Card[] hand) {
-        System.out.println("Magic hand:");
-        for (Card card : hand) {
-            System.out.println(card.getValue() + " of " + card.getSuit());
+            int number = rand.nextInt(13) + 1; // Card numbers 1-13
+            String suit = suits[rand.nextInt(suits.length)];
+            hand[i] = new Card(number, suit);
         }
     }
 
-    private static boolean searchHand(Card[] hand, Card userCard) {
-        for (Card card : hand) {
-            if (card.getSuit() == userCard.getSuit() && card.getValue() == userCard.getValue()) {
+    public boolean searchCard(Card card) {
+        for (Card c : hand) {
+            if (c.equals(card)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        CardGame game = new CardGame();
+
+        // Hard-coded lucky card
+        Card luckyCard = new Card(7, "Hearts");
+        System.out.println("The lucky card is: " + luckyCard);
+
+        if (game.searchCard(luckyCard)) {
+            System.out.println("You have the lucky card!");
+        } else {
+            System.out.println("You do not have the lucky card.");
+        }
+
+        // For testing: Print all cards in hand
+        System.out.println("The cards in hand are:");
+        for (Card card : game.hand) {
+            System.out.println(card);
+        }
     }
 }
 
