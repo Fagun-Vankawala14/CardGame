@@ -6,8 +6,8 @@ public class CardGame {
 
     /**
      * CardGame class models a hand of seven cards.
-     * Modifier: [Your Name], Student ID: [Your Student ID]
-     * Date Modified: [Current Date]
+     * Modifier:[ROMY ROMY], Student ID: [991725977]
+     * Date Modified: [2024-05-29]
      */
     public CardGame() {
         Random rand = new Random();
