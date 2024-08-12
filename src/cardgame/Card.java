@@ -8,7 +8,7 @@ package cardgame;
 /**
  *
  * @author fagun
- * Name:Freny Vahanka
+ * Name:Freny  Nilesh Vahanka
  * StudentID:- 991735491
  */
 public class Card {
